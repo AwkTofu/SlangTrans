@@ -1,4 +1,6 @@
 class Slang < ApplicationRecord
   belongs_to :user
-  belongs_to :definition
+  has_many :definitions
+  has_many :slang_books
+  has_many :books, through: :slang_books
 end
