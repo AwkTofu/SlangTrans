@@ -21,10 +21,8 @@ ActiveRecord::Schema.define(version: 2019_12_03_162806) do
 
   create_table "definitions", force: :cascade do |t|
     t.integer "slang_id", null: false
-    t.string "mandarin"
-    t.string "english"
-    t.string "german"
-    t.string "uyghur"
+    t.string "language"
+    t.string "meaning"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["slang_id"], name: "index_definitions_on_slang_id"
@@ -42,11 +40,9 @@ ActiveRecord::Schema.define(version: 2019_12_03_162806) do
   create_table "slangs", force: :cascade do |t|
     t.string "phrase"
     t.integer "user_id", null: false
-    t.integer "definition_id", null: false
     t.string "origin"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["definition_id"], name: "index_slangs_on_definition_id"
     t.index ["user_id"], name: "index_slangs_on_user_id"
   end
 
@@ -61,6 +57,5 @@ ActiveRecord::Schema.define(version: 2019_12_03_162806) do
   add_foreign_key "definitions", "slangs"
   add_foreign_key "slang_books", "books"
   add_foreign_key "slang_books", "slangs"
-  add_foreign_key "slangs", "definitions"
   add_foreign_key "slangs", "users"
 end
