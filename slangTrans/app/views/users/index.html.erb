@@ -1,0 +1,25 @@
+<% if session[:user] %>
+	<% display_name = session[:user]["name"] %>
+<% else %>
+	<% display_name = "Guest" %>
+<% end %>
+
+<h1>Welcome <%= display_name%></h1>
+<div>
+	<p> Search Bar Here </p>
+	<p> <%= link_to("Show All Slangs", slangs_path) %> </p>
+</div>
+<div>
+	<p>Click here to Sign Up</p>
+</div>
+
+<div>
+	<%# If user exist, show the logout button, else show the log in button %>
+	<% if session[:user] %>
+		<%= form_tag ({controller: 'users', action: 'destroy', method: 'post'}) do %>
+		  <input type=submit value='logout'>
+		<% end %>
+	<% else %>
+		<p> <%= link_to("Click Here to Login", login_path) %> </p>
+	<% end %>
+</div>
