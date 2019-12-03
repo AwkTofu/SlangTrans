@@ -3,7 +3,6 @@ class CreateSlangs < ActiveRecord::Migration[6.0]
     create_table :slangs do |t|
       t.string :phrase
       t.belongs_to :user, null: false, foreign_key: true
-      t.belongs_to :definition, null: false, foreign_key: true
       t.string :origin
 
       t.timestamps
