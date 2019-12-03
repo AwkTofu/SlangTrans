@@ -1,0 +1,2 @@
+module SlangBooksHelper
+end

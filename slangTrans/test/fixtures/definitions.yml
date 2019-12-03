@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  slang: one
+  mandarin: MyString
+  english: MyString
+  german: MyString
+  uyghur: MyString
+
+two:
+  slang: two
+  mandarin: MyString
+  english: MyString
+  german: MyString
+  uyghur: MyString

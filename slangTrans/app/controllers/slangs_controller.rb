@@ -1,0 +1,2 @@
+class SlangsController < ApplicationController
+end
