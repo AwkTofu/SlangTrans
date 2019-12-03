@@ -1,0 +1,8 @@
+<h1><%= @slang.phrase %></h1> 
+    
+<% @slang.definitions.each do |definition|%>
+    <p> <%= "#{definition.language} - #{definition.meaning}" %> </p>
+   
+<%end%>
+
+<%= link_to 'Back', slangs_path %>

@@ -1,0 +1,9 @@
+<h1>Edit definition</h1>
+<%= form_for @definition do |f|%>
+<%=f.label :language%>
+<%=f.text_field :language%>
+<%=f.label :url%>
+<%=f.text_field :url%>
+
+<%=f.submit 'Submit'%>
+<%end%>

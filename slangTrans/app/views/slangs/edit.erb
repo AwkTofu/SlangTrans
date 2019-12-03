@@ -1,0 +1,26 @@
+<h1>Edit</h1>
+<h3><%=@slang.phrase%></h3>
+
+<%= form_tag slangs_path do %>
+  <label>Phrase:</label><br>
+  <%= text_field_tag :'slang[phrase]' %> <br>
+
+  <label>Origin:</label><br>
+  <%= text_field_tag :'slang[origin]' %> <br>
+ 
+  <label>Mandarin:</label><br>
+  <%= text_field_tag :@mandarin %> <br>
+
+
+  <%= submit_tag "Submit" %>
+<% end %>
+
+
+
+
+
+
+
+
+
+ 
