@@ -1,4 +1,5 @@
 
+include BCrypt
 
 puts "Destroying former seeds"
 
@@ -10,9 +11,12 @@ Book.destroy_all
 SlangBook.destroy_all
 
 puts "Making new ones!"
+p1 = Password.create("test")
+p2 = Password.create("password")
+
 ########user#########
-u1 = User.create(name: "FanZhong", username: "fanz", password: "test")
-u2 = User.create(name: "Gena", username: "saphirg", password: "password")
+u1 = User.create(name: "FanZhong", username: "fanz", password_digest: p1)
+u2 = User.create(name: "Gena", username: "saphirg", password_digest: p2)
 
 ######slang#######
 s1 = Slang.create(phrase: "Piece of cake", origin: "English", user: u1)
