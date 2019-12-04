@@ -1,0 +1,9 @@
+<h1>LOGIN HERE</h1>
+<% if flash[:loginerror] %>
+	<%= "Error: #{flash[:loginerror]}" %>
+<% end %>
+<%= form_tag ({controller: 'users', action: 'create', method: 'post'}) do %>
+	<p> Name: <input name=username></p>
+  <p> Password: <input name="password" type="password" /></p>
+  <input type=submit value='login'>
+<% end %>
