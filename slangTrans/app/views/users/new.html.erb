@@ -1,0 +1,15 @@
+<h1>Sign Up Form</h1>
+
+<% if flash[:notice] %>
+	<%= "Error: #{flash[:notice]}" %>
+<% end %>
+
+<%= form_with model: @user, class: "signup_form", url: main_menu_path, method: "post" do |f| %>
+  <%= f.label("Name:") %>
+  <%= f.text_field :name %><br>
+  <%= f.label("Username:") %>
+  <%= f.text_field :username %><br>
+  <%= f.label("Password:") %>
+  <%= f.password_field :password %><br>
+  <%= f.submit "Create" %>
+<% end %>
