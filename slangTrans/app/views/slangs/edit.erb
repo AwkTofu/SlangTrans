@@ -3,14 +3,20 @@
 
 <%= form_tag slangs_path do %>
   <label>Phrase:</label><br>
-  <%= text_field_tag :'slang[phrase]' %> <br>
+  <%= text_field_tag :'slang[phrase]', "#{@slang.phrase}" %> <br>
 
   <label>Origin:</label><br>
-  <%= text_field_tag :'slang[origin]' %> <br>
+  <%= text_field_tag :'slang[origin]', "#{@slang.origin}" %> <br>
  
   <label>Mandarin:</label><br>
-  <%= text_field_tag :@mandarin %> <br>
+  <%= text_field_tag :@mandarin, "#{@mandarin.meaning}" %> <br>
+  
 
+ <label>English:</label><br>
+  <%= text_field_tag :@english, "#{@english.meaning}" %> <br>
+
+  <label>German:</label><br>
+  <%= text_field_tag :@german, "#{@german.meaning}" %> <br>
 
   <%= submit_tag "Submit" %>
 <% end %>

@@ -46,7 +46,7 @@ class SlangsController < ApplicationController
 
     private
     def slang_params
-        params.require(:slang).permit(:phrase, :user_id, :origin)
+        params.require(:slang).permit(:phrase, :origin)
     end 
 
     def find_slang
