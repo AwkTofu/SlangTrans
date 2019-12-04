@@ -3,4 +3,5 @@ class Slang < ApplicationRecord
   has_many :definitions
   has_many :slang_books
   has_many :books, through: :slang_books
+  accepts_nested_attributes_for :definitions
 end
