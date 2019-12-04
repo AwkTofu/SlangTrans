@@ -1,0 +1,18 @@
+<h1>Create New Slang</h1>
+
+ 
+<%= form_for @slang do |f|%>
+
+<%=f.label :phrase%>
+<%=f.text_field :phrase%>
+<%=f.label :origin%>
+<%=f.text_field :origin%> <br>
+
+<%=f.submit "Create"%>
+<%end%>
+
+
+
+
+
+

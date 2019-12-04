@@ -6,6 +6,7 @@ class SlangsController < ApplicationController
     
 
     def new
+        @slang = Slang.new
     end 
 
     def create

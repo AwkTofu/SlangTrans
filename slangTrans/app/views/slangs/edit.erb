@@ -6,10 +6,13 @@
 <%=f.text_field :phrase%>
 <%=f.label :origin%>
 <%=f.text_field :origin%> <br>
-<%=f.label :definitions%>
-<%=f.fields_for :definitions do |definitions_fields| %> 
-    <%= definitions_fields.text_field :meaning %> 
+
+<%@slang.definitions.each do |definition|%> <br>
+<%=f.label definition.language %> 
+<%=f.fields_for :definition do |definition_fields| %> 
+    <%= definition_fields.text_field :meaning%> 
   <% end %>
+  <%end%>
 <br>
 <%=f.submit "Submit"%>
 <%end%>
