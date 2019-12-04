@@ -1,5 +1,7 @@
 
+
 puts "Destroying former seeds"
+
 
 User.destroy_all
 Slang.destroy_all
