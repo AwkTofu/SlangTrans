@@ -32,6 +32,11 @@ class SessionsController < ApplicationController
   	def destroy
 	    session.delete :user_id
 	    session.delete :user_name
-		redirect_to main_menu_path
+
+	    #Used to make sure u return to the page u logout from
+	    if !session[:before_login_url]
+  			session[:before_login_url] = main_menu_path
+  		end
+		redirect_to session[:before_login_url]
 	end
 end

@@ -1,3 +1,6 @@
+<%#This is used to keep track of which page u goto after logging in %>
+<%session[:before_login_url] = request.original_url%> 
+
 <h1><%=@book.title%></h1>
 <p><%=link_to @book.url, @book.url %></p>
 <%= link_to "Back", slangs_path %>

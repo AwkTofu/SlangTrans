@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
 	def index
 		#Main Menu login/search/list to find words
-
+		#This is used to keep track of which page u goto after logging in
 		session[:before_login_url] = request.original_url
 		#byebug
 	end
