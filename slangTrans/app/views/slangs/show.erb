@@ -1,7 +1,11 @@
 <h1><%= @slang.phrase %> </h1> 
 <h3>Created by:<%=@slang.user.name%>  </h3>
+<%if session[:user_id]%>
 <%= button_to 'Edit Slang', edit_slang_path(@slang), method: "get" %>
 <%= button_to "Delete Slang", @slang, :method => :delete %>
+<% else %>
+<%end%>
+
 <% @slang.definitions.each do |definition|%>
     <p> <%= "#{definition.language} - #{definition.meaning}" %> </p>
    

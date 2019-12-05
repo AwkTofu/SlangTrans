@@ -50,14 +50,7 @@ class SlangsController < ApplicationController
         find_slang
     end 
 
-    def authorized
-        byebug
-        unless session[:user]
-            
-
-        end 
-
-    end 
+    
 
     private
     def slang_params
@@ -66,7 +59,7 @@ class SlangsController < ApplicationController
     end 
 
     def find_slang
-        @slang=Slang.find(params[:id])
+        @slang=Slang.find_by(id: params[:id])
     end 
 
    
