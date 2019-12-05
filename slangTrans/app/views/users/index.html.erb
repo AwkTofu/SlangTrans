@@ -8,7 +8,13 @@
 <div>
 	<p><%= link_to 'Search Bar Here', '/search'%>
 	
-	
+	<%= form_tag(search_slang_path, :method => "get") do %>  
+  
+    <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
+     
+      <%= button_tag "Search slang", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>  
+    
+<% end %>
 	
 	
 	 </p>

@@ -48,7 +48,9 @@ class SlangsController < ApplicationController
 
     
     def search
-        
+       
+        @results = Slang.all.where('phrase LIKE ?', "%#{params[:search]}%")
+
     end 
     
     def show

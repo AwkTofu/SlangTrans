@@ -1,1 +1,16 @@
-<%= form_for @slang do |f|%>
+<%= form_tag(search_slang_path, :method => "get") do %>  
+  
+    <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
+     
+      <%= button_tag "Search slang", :class => 'search',:name => nil%>  
+    
+<% end %>
+<%if @results.any?%>
+<p><% @results.each do |result|%>
+<%=result.phrase%> <br>
+<%end%>
+<%else%>
+<%="Not found"%>
+<%end%>
+
+</p>
