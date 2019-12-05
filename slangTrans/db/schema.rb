@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2019_12_03_162806) do
   end
 
   create_table "definitions", force: :cascade do |t|
-    t.integer "slang_id", null: false
+    t.integer "slang_id"
     t.string "language"
     t.string "meaning"
     t.datetime "created_at", precision: 6, null: false

@@ -7,14 +7,19 @@ class SlangsController < ApplicationController
 
     def new
         @slang = Slang.new
+        @slang.definitions.build
     end 
 
     def create
-      
-       
-        @slang = Slang.create(slang_params, user: User.first)
-        
+        all_params = slang_params
+        all_params[:user] = User.find(session[:user_id])
+        @slang = Slang.create(all_params)
+        if @slang.save        
         redirect_to slang_path(@slang)
+        else  
+            flash[:errors]=@slang.errors.full_messages
+            render :new
+        end 
     end 
 
     def edit
@@ -33,7 +38,7 @@ class SlangsController < ApplicationController
     end 
 
     def destroy
-        slang_params
+        find_slang
         @slang.destroy
         redirect_to slangs_path
     end 
@@ -45,7 +50,7 @@ class SlangsController < ApplicationController
     private
     def slang_params
      
-        params.require(:slang).permit(:phrase, :origin, definitions_attributes:[:id, :meaning, :language])
+        params.require(:slang).permit(:phrase, :origin, definitions_attributes: [:id, :meaning, :language, :_destroy])
     end 
 
     def find_slang

@@ -7,6 +7,17 @@
 <%=f.label :origin%>
 <%=f.text_field :origin%> <br>
 
+<ul>
+	<%= f.fields_for :definitions do |definitions_form| %>
+		<li>
+			<p> Meaning: <%= definitions_form.text_field :meaning %> 
+       Language: <%= definitions_form.text_field :language %> </p> 
+
+      
+
+		</li>
+	<% end %>
+	</ul>
 
  
 
