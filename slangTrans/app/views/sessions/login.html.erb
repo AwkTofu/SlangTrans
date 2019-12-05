@@ -3,7 +3,7 @@
 	<%= "Error: #{flash[:notice]}" %>
 <% end %>
 <%= form_tag(login_path, method: 'post') do %>
-	<p> Name: <input name=username></p>
+	<p> Username: <input name=username></p>
   <p> Password: <input name="password" type="password" /></p>
   <input type=submit value='login'>
 <% end %>
