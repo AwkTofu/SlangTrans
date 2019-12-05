@@ -10,7 +10,15 @@
 <%end%>
 
 <% @slang.definitions.each do |definition|%>
-    <p> <%= "#{definition.language} - #{definition.meaning}" %> </p>
+	<% case definition.language %>
+	<% when "english" %>
+	<% country_flag_url = "https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/800px-Flag_of_the_United_States.svg.png" %>
+	<% when "german" %>
+	<% country_flag_url = "https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/800px-Flag_of_Germany.svg.png" %>
+	<% when "mandarin" %>
+	<% country_flag_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/1024px-Flag_of_the_People%27s_Republic_of_China.svg.png' %>
+	<% end %>
+    <p> <img src=<%= country_flag_url %> id=<%definition.language%> alt="Smiley face" height="20" width="38"> <%= "#{definition.language} : #{definition.meaning}" %> </p>
    
 <%end%>
 
