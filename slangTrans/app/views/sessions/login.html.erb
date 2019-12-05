@@ -1,9 +1,12 @@
 <h1>LOGIN HERE</h1>
-<% if flash[:loginerror] %>
-	<%= "Error: #{flash[:loginerror]}" %>
+<% if flash[:notice] %>
+	<%= "Error: #{flash[:notice]}" %>
 <% end %>
-<%= form_tag ({controller: 'users', action: 'create', method: 'post'}) do %>
+<%= form_tag(login_path, method: 'post') do %>
 	<p> Name: <input name=username></p>
   <p> Password: <input name="password" type="password" /></p>
   <input type=submit value='login'>
 <% end %>
+
+<br>
+<p> <%= link_to("Return to Homepage", main_menu_path) %> </p>
