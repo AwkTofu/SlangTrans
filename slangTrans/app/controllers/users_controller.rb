@@ -26,6 +26,6 @@ class UsersController < ApplicationController
   		else
   			flash[:notice] = "Some Field was not filled out"
   		end
-  		byebug#
+  		
   	end
 end

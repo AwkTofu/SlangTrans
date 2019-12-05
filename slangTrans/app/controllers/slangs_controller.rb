@@ -1,4 +1,6 @@
 class SlangsController < ApplicationController
+    
+    
     def index
         @slangs = Slang.all
     end 
@@ -46,6 +48,15 @@ class SlangsController < ApplicationController
 
     def show
         find_slang
+    end 
+
+    def authorized
+        byebug
+        unless session[:user]
+            
+
+        end 
+
     end 
 
     private
