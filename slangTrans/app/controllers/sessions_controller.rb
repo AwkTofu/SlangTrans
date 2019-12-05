@@ -6,7 +6,12 @@ class SessionsController < ApplicationController
   		if @user && @user.authenticate(params[:password])
   			session[:user_id] = @user.id
   			session[:user_name] = @user.name
-  			redirect_to main_menu_path
+  			puts "URL: #{request.original_url}"
+
+  			if !session[:before_login_url]
+  				session[:before_login_url] = main_menu_path
+  			end
+  			redirect_to session[:before_login_url]
   		else
   			flash[:notice] = "Wrong Username and/or Password"
   			redirect_to login_path
@@ -27,6 +32,11 @@ class SessionsController < ApplicationController
   	def destroy
 	    session.delete :user_id
 	    session.delete :user_name
-		redirect_to main_menu_path
+
+	    #Used to make sure u return to the page u logout from
+	    if !session[:before_login_url]
+  			session[:before_login_url] = main_menu_path
+  		end
+		redirect_to session[:before_login_url]
 	end
 end
