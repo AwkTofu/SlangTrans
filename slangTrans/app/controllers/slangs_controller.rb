@@ -1,4 +1,6 @@
 class SlangsController < ApplicationController
+    
+    
     def index
         @slangs = Slang.all
     end 
@@ -13,6 +15,7 @@ class SlangsController < ApplicationController
     def create
         all_params = slang_params
         all_params[:user] = User.find(session[:user_id])
+        
         @slang = Slang.create(all_params)
         if @slang.save        
         redirect_to slang_path(@slang)
@@ -47,6 +50,8 @@ class SlangsController < ApplicationController
         find_slang
     end 
 
+    
+
     private
     def slang_params
      
@@ -54,7 +59,7 @@ class SlangsController < ApplicationController
     end 
 
     def find_slang
-        @slang=Slang.find(params[:id])
+        @slang=Slang.find_by(id: params[:id])
     end 
 
    
