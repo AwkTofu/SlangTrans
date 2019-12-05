@@ -13,6 +13,7 @@ class SlangsController < ApplicationController
     def create
         all_params = slang_params
         all_params[:user] = User.find(session[:user_id])
+        
         @slang = Slang.create(all_params)
         if @slang.save        
         redirect_to slang_path(@slang)
