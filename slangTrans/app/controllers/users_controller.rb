@@ -2,6 +2,8 @@ class UsersController < ApplicationController
 
 	def index
 		#Main Menu login/search/list to find words
+
+		session[:before_login_url] = request.original_url
 		#byebug
 	end
 
