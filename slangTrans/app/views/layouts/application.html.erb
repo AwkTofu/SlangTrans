@@ -10,6 +10,17 @@
   </head>
 
   <body>
+    <div id="login_out_button">
+      <%# If user exist, show the logout button, else show the log in button %>
+      <% if session[:user_id] %>
+        <p> Profile: <%= session[:user_name] %> </p>
+        <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+          <input type=submit value='logout'>
+        <% end %>
+      <% else %>
+        <p> <%= link_to("Login/Signup", login_path) %> </p>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>
