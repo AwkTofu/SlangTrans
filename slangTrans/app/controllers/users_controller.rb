@@ -27,6 +27,5 @@ class UsersController < ApplicationController
   			flash[:notice] = user.errors.messages
   			redirect_to new_user_path
   		end
-  		#byebug#
   	end
 end
