@@ -9,7 +9,7 @@ class SlangsController < ApplicationController
 
     def new
         @slang = Slang.new
-        @slang.definitions.build
+        3.times{@slang.definitions.build}
     end 
 
     def create
@@ -27,7 +27,7 @@ class SlangsController < ApplicationController
 
     def edit
         find_slang
-        
+        2.times{@slang.definitions.build}
         
     end 
 
