@@ -3,4 +3,10 @@
 
 <h1><%=@book.title%></h1>
 <p><%=link_to @book.url, @book.url %></p>
-<%= link_to "Back", slangs_path %>
+
+<img id="book_gif" src=<%=@book.img %> alt="picture of the book" height="300" width="300">
+
+
+<p><%= link_to "Back", slangs_path %></p>
+
+<%= button_to 'Back to Homepage', main_menu_path, method: "get" %>
