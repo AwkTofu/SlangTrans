@@ -8,6 +8,14 @@
 <%=f.label :origin%>
 <%=f.text_field :origin%> <br>
 
+<p>Definition</p>
+<%= f.fields_for :definitions, @slang.definitions.build do |definitions_fields| %>
+   <p> Meaning: <%= definitions_fields.text_field :meaning %> </p>
+    <p> Language: <%= definitions_fields.text_field :language %> </p>
+
+
+  <% end %>
+
 <%=f.submit "Create"%>
 <%end%>
 

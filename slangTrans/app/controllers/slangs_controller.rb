@@ -10,7 +10,10 @@ class SlangsController < ApplicationController
     end 
 
     def create
-        @slang = Slang.create(slang_params)
+      
+       
+        @slang = Slang.create(slang_params, user: User.first)
+        
         redirect_to slang_path(@slang)
     end 
 
@@ -41,7 +44,8 @@ class SlangsController < ApplicationController
 
     private
     def slang_params
-        params.require(:slang).permit(:phrase, :user_id, :origin, definition_ids:[], definitions_attributes: [:meaning])
+     
+        params.require(:slang).permit(:phrase, :origin, definitions_attributes:[:id, :meaning, :language])
     end 
 
     def find_slang

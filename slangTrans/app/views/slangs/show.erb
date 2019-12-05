@@ -1,10 +1,12 @@
 <h1><%= @slang.phrase %></h1>  
-<p><%= button_to 'Edit', edit_slang_path(@slang), method: "get" %></p>
+<p><%= button_to 'Edit Slang', edit_slang_path(@slang), method: "get" %></p>
     
 <% @slang.definitions.each do |definition|%>
     <p> <%= "#{definition.language} - #{definition.meaning}" %> </p>
    
 <%end%>
+
+
 
 <p>Related books recommendation:
   <%@slang.books.each do |book|%>
