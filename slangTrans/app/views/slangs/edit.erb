@@ -1,26 +1,35 @@
 <h1>Edit</h1>
 <h3><%=@slang.phrase%></h3>
-
-<%= form_tag slangs_path do %>
-  <label>Phrase:</label><br>
-  <%= text_field_tag :'slang[phrase]' %> <br>
-
-  <label>Origin:</label><br>
-  <%= text_field_tag :'slang[origin]' %> <br>
  
-  <label>Mandarin:</label><br>
-  <%= text_field_tag :@mandarin %> <br>
+<%= form_for @slang do |f|%>
+<%=f.label :phrase%>
+<%=f.text_field :phrase%>
+<%=f.label :origin%>
+<%=f.text_field :origin%> <br>
 
+<ul>
+	<%= f.fields_for :definitions do |definitions_form| %>
+		<li>
+			<p> Meaning: <%= definitions_form.text_field :meaning %> 
+       Language: <%= definitions_form.text_field :language %> </p> 
 
-  <%= submit_tag "Submit" %>
-<% end %>
+      
 
-
-
-
-
-
-
-
+		</li>
+	<% end %>
+	</ul>
 
  
+
+ 
+
+  
+  
+<br>
+<%=f.submit "Submit"%>
+<%end%>
+
+
+
+
+

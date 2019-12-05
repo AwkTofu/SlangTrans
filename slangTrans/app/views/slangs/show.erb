@@ -1,8 +1,17 @@
-<h1><%= @slang.phrase %></h1> 
-    
+<h1><%= @slang.phrase %> <%=@slang.user.name%></h1>  
+<%= button_to 'Edit Slang', edit_slang_path(@slang), method: "get" %>
+<%= button_to "Delete Slang", @slang, :method => :delete %>
 <% @slang.definitions.each do |definition|%>
     <p> <%= "#{definition.language} - #{definition.meaning}" %> </p>
    
 <%end%>
+
+
+
+<p>Related books recommendation:
+  <%@slang.books.each do |book|%>
+  <%= link_to book.title, book_path(book)%>
+  <%end%>
+</p>
 
 <%= link_to 'Back', slangs_path %>

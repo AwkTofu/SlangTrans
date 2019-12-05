@@ -5,8 +5,9 @@ puts "Destroying former seeds"
 
 
 User.destroy_all
-Slang.destroy_all
+SlangBook.destroy_all
 Definition.destroy_all
+Slang.destroy_all
 Book.destroy_all
 SlangBook.destroy_all
 
