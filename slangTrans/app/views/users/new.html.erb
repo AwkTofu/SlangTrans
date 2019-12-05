@@ -6,6 +6,7 @@
 		<% end %>
 		<br>
 	<% end %>
+	<%puts "URL: #{request.original_url}"%>
 </div>
 <div>
 	<%= form_with model: @user, class: "signup_form", url: main_menu_path, method: "post" do |f| %>
