@@ -46,6 +46,11 @@ class SlangsController < ApplicationController
         redirect_to slangs_path
     end 
 
+    
+    def search
+        
+    end 
+    
     def show
         find_slang
     end 
