@@ -55,8 +55,8 @@ d15 = Definition.create(slang: s6, meaning: "Berufsleben und Freizeit sollte man
 
 
 ########book#########
-b1 = Book.create(title: "Dictionary", url: "https://www.google.com/")
-b2 = Book.create(title: "Slang for dummies", url: "http://onlineslangdictionary.com/")
+b1 = Book.create(title: "Dictionary", url: "https://www.google.com/", img:"https://media.giphy.com/media/l2Je66zG6mAAZxgqI/giphy.gif")
+b2 = Book.create(title: "Slang for dummies", url: "http://onlineslangdictionary.com/", img:"https://media.giphy.com/media/IPbS5R4fSUl5S/giphy.gif")
 
 #######jointable#######
 SlangBook.create(slang: s1, book: b1)

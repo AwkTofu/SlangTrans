@@ -13,10 +13,11 @@
 
 
 
-<p>Related books recommendation:
-  <%@slang.books.each do |book|%>
-  <%= link_to book.title, book_path(book)%>
-  <%end%>
-</p>
+<p>Related books recommendation: (click the title to see a book.)</p>
+<ul>
+ <%@slang.books.each do |book|%>
+  <%= link_to book.title, book_path(book)%> <br>
+  <%end%> 
+</ul>
 
 <%= link_to 'Back', slangs_path %>
