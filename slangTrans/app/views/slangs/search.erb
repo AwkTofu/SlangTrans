@@ -7,7 +7,7 @@
 <% end %>
 <%if @results.any?%>
 <p><% @results.each do |result|%>
-<%=result.phrase%> <br>
+<%= link_to result.phrase, slang_path(result)%> <br>
 <%end%>
 <%else%>
 <%="Not found"%>
