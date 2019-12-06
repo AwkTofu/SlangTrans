@@ -13,7 +13,16 @@
  *= require_tree .
  *= require_self
  */
-ul#navbar {
+.left {
+	text-align: left;
+}
+
+#back_button {
+	position: absolute;
+	bottom: 0;
+}
+
+ul.navbar {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -21,12 +30,12 @@ ul#navbar {
   background-color: #333;
 }
 
-li#navbar {
+li.navbar {
   float: left;
   border-right:1px solid #bbb;
 }
 
-li#navbar:last-child {
+li.navbar:last-child {
   border-right: none;
 }
 
@@ -46,9 +55,17 @@ li div:hover:not(.active) {
 	margin: 0cm;
 }
 
-#main_page {
+article {
 	text-align: center;
-	margin: 10em;
+	margin-left: 2em;
+	margin-right: 2em;
+	margin-top: 1em;
+	padding: 2em;
+	background-color: #515487;
+	padding-bottom: 17%;
+}
+p {
+	text-align: left;
 }
 
 #slang_edit {
@@ -60,4 +77,27 @@ li div:hover:not(.active) {
 #book_title_url{
 	text-align: left;
 	padding: 1cm;
+}
+
+body {background-color: #3b3d63;
+	color: #fff;}
+
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
+
+/* unvisited link */
+a:link, a:visited {
+  color: white;
+}
+
+/* mouse over link */
+a:hover {
+  color: #00ff08;
+}
+
+/* selected link */
+a:active {
+  color: #00ab05;
 }
