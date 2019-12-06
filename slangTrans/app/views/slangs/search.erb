@@ -1,3 +1,6 @@
+<%#This is used to keep track of which page u goto after logging in %>
+<%session[:before_login_url] = request.original_url%> 
+
 <article id="slang_search">
 
 <%= form_tag(search_slang_path, :method => "get") do %>  
