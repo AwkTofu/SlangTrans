@@ -51,10 +51,6 @@ li div {
 li div:hover:not(.active) {
   background-color: #111;
 }
-#book_gif {
-	float: right;
-	margin: 0cm;
-}
 
 article {
 	text-align: center;
