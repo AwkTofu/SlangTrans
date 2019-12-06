@@ -34,10 +34,12 @@ class SlangsController < ApplicationController
     def update
         find_slang
        
-        @slang.update(slang_params)
-        
-     
+       if @slang.update(slang_params)
         redirect_to slang_path(@slang)
+       else 
+        flash[:errors]=@slang.errors.full_messages
+        render :edit
+       end 
     end 
 
     def destroy
