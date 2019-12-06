@@ -1,16 +1,72 @@
 
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+.left {
+	text-align: left;
+}
 
-#login_out_button {
-	float:right;
+#back_button {
+	position: absolute;
+	bottom: 0;
+}
+
+ul.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li.navbar {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li.navbar:last-child {
+  border-right: none;
+}
+
+li div {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li div:hover:not(.active) {
+  background-color: #111;
 }
 #book_gif {
 	float: right;
 	margin: 0cm;
 }
 
-#main_page {
+article {
 	text-align: center;
-	margin: 10em;
+	margin-left: 2em;
+	margin-right: 2em;
+	margin-top: 1em;
+	padding: 2em;
+	background-color: #515487;
+	padding-bottom: 17%;
+}
+p {
+	text-align: left;
 }
 
 #slang_edit {
@@ -22,4 +78,27 @@
 #book_title_url{
 	text-align: left;
 	padding: 1cm;
+}
+
+body {background-color: #3b3d63;
+	color: #fff;}
+
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
+
+/* unvisited link */
+a:link, a:visited {
+  color: white;
+}
+
+/* mouse over link */
+a:hover {
+  color: #00ff08;
+}
+
+/* selected link */
+a:active {
+  color: #00ab05;
 }
