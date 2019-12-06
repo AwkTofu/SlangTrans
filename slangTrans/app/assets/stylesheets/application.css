@@ -1,3 +1,4 @@
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -49,10 +50,6 @@ li div {
 
 li div:hover:not(.active) {
   background-color: #111;
-}
-#book_gif {
-	float: right;
-	margin: 0cm;
 }
 
 article {
