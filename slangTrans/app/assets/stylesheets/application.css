@@ -19,5 +19,21 @@
 }
 #book_gif {
 	float: right;
-	margin: 1cm;
+	margin: 0cm;
+}
+
+#main_page {
+	text-align: center;
+	margin: 10em;
+}
+
+#slang_edit {
+	text-align: center;
+	margin: 10em;
+	
+}
+
+#book_title_url{
+	text-align: left;
+	padding: 1cm;
 }

@@ -1,3 +1,5 @@
+<article id="slang_search">
+
 <%= form_tag(search_slang_path, :method => "get") do %>  
   
     <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
@@ -12,5 +14,10 @@
 <%else%>
 <%="Not found"%>
 <%end%>
+<%if session[:user_id]%>
+<%= button_to 'Create New Slang', new_slang_path, method: "get" %>
+<% else %>
+<%end %>
 
 </p>
+</article>

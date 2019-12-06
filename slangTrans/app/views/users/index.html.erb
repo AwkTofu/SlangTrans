@@ -1,3 +1,4 @@
+<article id="main_page">
 <% if session[:user_name] %>
 	<% display_name = session[:user_name] %>
 <% else %>
@@ -6,7 +7,7 @@
 
 <h1>Welcome <%= display_name%></h1>
 <div>
-	<p><%= link_to 'Search Bar Here', '/search'%>
+	
 	
 	<%= form_tag(search_slang_path, :method => "get") do %>  
   
@@ -18,5 +19,6 @@
 	
 	
 	 </p>
-	<p> <%= link_to("Show All Slangs", slangs_path) %> </p>
+	
 </div>
+</article>
