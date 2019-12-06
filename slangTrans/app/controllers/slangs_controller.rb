@@ -1,11 +1,10 @@
 class SlangsController < ApplicationController
-    
+    before_action :require_login
+    skip_before_action :require_login, only: [:index, :search, :show]
     
     def index
         @slangs = Slang.all
     end 
-
-    
 
     def new
         @slang = Slang.new
