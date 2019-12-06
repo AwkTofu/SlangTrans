@@ -16,7 +16,7 @@
 	<%= f.fields_for :definitions do |definitions_form| %>
 		<li>
 			<p> Meaning: <%= definitions_form.text_field :meaning %> </p> 
-      <p> Language: <%= definitions_form.select :language, ["english", "mandarin", "german", " "] %> </p> 
+      <p> Language: <%= definitions_form.select :language, [ " ", "english", "mandarin", "german"] %> </p> 
 
 		</li>
 	<% end %>
