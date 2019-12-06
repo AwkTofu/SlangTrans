@@ -1,5 +1,7 @@
 class Definition < ApplicationRecord
   belongs_to :slang
+  validates :meaning, presence: true
+  validates :language, presence: true
 
   # def edit
   #    find_definition
